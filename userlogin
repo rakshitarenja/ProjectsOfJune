@@ -1,0 +1,24 @@
+<html>
+<head>
+</head>
+<body>
+<h1 align="center" color="red">USER LOGIN</h1>
+<pre>
+
+User Email ID: <input type="text" name="email" placeholder="abc@email.com"/>
+
+Password: <input type="text" name="pwd"/>
+
+<input type="submit" name="Login" value="password"/>
+
+<a href=""><u>New User Registration</u></a>
+
+</pre>
+</body>
+</html>
+
+<?php
+session_start();
+	if(isset($_SESSION["er"]))
+	echo "<font color=red>".$_SESSION["er"]."</font>"
+?>
