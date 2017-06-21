@@ -1,0 +1,59 @@
+<html>
+<head>
+<title>New User</title>
+</head>
+<body>
+
+<form action="newuser.php" method="post">
+
+<table>
+<tr><td>Name</td><td><input type="text" placeholder="Enter Name" name="un"/></td></tr>
+
+<tr><td>Email</td><td><input type="text" placeholder="abc@email.com" name="email"/></td></tr>
+
+<tr><td>Password</td><td><input type="password" name="pwd"/></td></tr>
+
+<tr><td>select City</td><td><select name="city">
+  <option>Indore</option>
+  <option>Ratlam</option>
+  <option>Bhopal</option>
+  <option>Dewas</option>
+  <option>Ujjain</option>
+  </select></td></tr>
+
+<tr><td>Mob.No</td><td><input type="text" name="mob"/></td></tr>
+
+<tr><td>Hobby</td>
+<td>
+ Play <input type="checkbox" name="ch1" value="Play"/><br>
+ read <input type="checkbox" name="ch2" value="read"/><br>
+ write <input type="checkbox" name="ch3" value="write"/><br>
+</td></tr>
+
+<tr><td>Gender</td><td>
+Male <input type="radio" name="g" value="Male"/><br>
+Female <input type="radio" name="g" value="Female">
+</td></tr>
+
+<tr><td>Address</td><td><textarea rows="5" cols="15"></textarea></td>
+
+<tr><td><input type="submit" name="submit" value="submit"/></td></tr>
+
+<td><input type="reset" name="reset" value="reset"/></td></tr>
+
+</table>
+</form>
+</body>
+</html>
+
+<?php
+ $nu=mysqli_connect("localhost","root","root","userid",3306);
+ 	if(isset($_POST["submit"]))
+ 	{
+	extract($_POST);
+	$a=mysqli_query($nu,"insert into userid values('$name','$email','$pwd','$city',$mob,'$hobby','$gender')");
+
+	if(a>0)
+	echo"Data Saved!";
+	}
+?>
